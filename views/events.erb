@@ -1,9 +1,7 @@
 <h1>All Events</h1>
 
-
-
 <%for a in @events %>
 <p>
-    <a href=""><%=a[:title]%><a>
+    <a href="/events/<%=a[:id]%>"><%=a[:title]%><a>
 </p>
 <%end %>
