@@ -30,3 +30,9 @@ get "/events/:id" do
     @event = events_table.where(id: params["id"]).to_a[0]
     view "event"
 end
+
+get "/events/:id/rsvps/new" do
+puts "params #{params}"
+@event = events_table.where(id: params["id"]).to_a[0]
+view "new_rsvp"
+end
