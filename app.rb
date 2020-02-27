@@ -12,5 +12,15 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }   #
 after { puts }                                                              #
 #############################################################################
 
-events_table = DB.from(:events)
+#connect to SQL tables and store them as local objects
+events_table = DB.from(:events) 
 rsvps_table = DB.from(:rsvps)
+
+
+get "/" do 
+puts "params #{params}"
+pp events_table.all.to_a
+@events = events_table.all.to_a
+view "events"
+end
+
